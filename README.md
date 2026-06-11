@@ -1,4 +1,5 @@
-# DevOps Project 010 — CI/CD Pipeline with Jenkins, SonarQube, Docker, ArgoCD & EKS
+# DevOps Project 010 
+# CI/CD Pipeline with Jenkins, SonarQube, Docker, ArgoCD & EKS
 
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
