@@ -170,6 +170,30 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 - Namespace: `default`
 - Sync Policy: `Automatic`
 
+## 🧹 Cleanup
+### Delete EKS Cluster
+```bash
+eksctl delete cluster \
+  --name DevOps-Project-010 \
+  --region us-east-1
+```
+### Delete EC2 Servers
+- Terminate all 4 EC2 instances from AWS Console:
+  - Jenkins-Master
+  - Jenkins-Agent
+  - SonarQube-Server
+  - EKS-Bootstrap-Server
+
+### Delete Other Resources
+```bash
+# Delete ArgoCD application first
+kubectl delete app register-app -n argocd
+ 
+# Delete ArgoCD namespace
+kubectl delete namespace argocd
+``` 
+> ⚠️ **Note:** Always delete EKS cluster first before terminating EC2 instances to avoid orphaned AWS resources (Load Balancers, Security Groups, VPC).
+
 ## 👨‍💻 Author
 **Hafiz Muhammad Umar Rafique**
 - GitHub: [@hmurafique](https://github.com/hmurafique)
